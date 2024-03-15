@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: ubuntu
+    user: root
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - "./:/home/user/lab1_files"
+    command: ["/bin/bash", "-c", "/bin/chmod +x /home/user/lab1_files/setup_script.sh && /home/user/lab1_files/setup_script.sh"]
+    
